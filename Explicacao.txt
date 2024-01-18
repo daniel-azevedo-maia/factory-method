@@ -1,0 +1,24 @@
+Factory Method:
+
+O Factory Method é um padrão de projeto em Java que é usado para criar objetos. A ideia básica é ter uma interface ou classe abstrata com um método, frequentemente chamado de 'factory method', que cria e retorna instâncias de uma classe. O Factory Method encapsula a criação de objetos, permitindo que as subclasses alterem o tipo de objetos que serão criados. Aqui está uma definição simples, mas completa:
+
+Interface ou Classe Abstrata: Você começa definindo uma interface ou uma classe abstrata que declara o método de fábrica. Esse método é responsável por criar e retornar um objeto. O tipo de retorno deste método geralmente é uma interface ou uma classe abstrata, permitindo que o método retorne diferentes subclasses dessa interface ou classe.
+
+Subclasses Concretas: Em seguida, você cria várias subclasses que implementam a interface ou estendem a classe abstrata. Cada uma dessas subclasses concretiza o método de fábrica para criar e retornar uma instância de uma classe específica.
+
+Criação de Objetos: Quando você precisa de um novo objeto, invoca o método de fábrica em vez de usar o operador new. Isso permite que o código cliente seja independente das classes concretas que ele precisa criar, tornando o sistema mais modular e fácil de estender.
+
+Por exemplo, imagine que você tenha uma aplicação que cria diferentes tipos de documentos. Você pode ter uma classe abstrata Documento com um método de fábrica criarDocumento(). Subclasses como DocumentoTexto e DocumentoImagem implementam esse método para retornar uma instância do tipo de documento correspondente.
+
+Este padrão é particularmente útil quando:
+
+O processo de criação envolve alguma lógica que não deve ser exposta ao código cliente.
+Há necessidade de adicionar novos tipos de produtos sem alterar o código que usa os produtos.
+Você quer fornecer uma biblioteca de produtos e revelar apenas suas interfaces, não suas implementações.
+
+Suponha que queremos criar um sistema para gerenciar diferentes tipos de veículos. Usaremos o Factory Method para criar diferentes tipos de veículos, como Carros e Bicicletas. Aqui está como podemos estruturar isso:
+
+Interface Veículo: Uma interface comum para todos os tipos de veículos.
+Classes Concretas: Implementações específicas para cada tipo de veículo (por exemplo, Carro, Bicicleta).
+Classe Abstrata VeículoFactory: Uma classe abstrata que define o método de fábrica.
+Subclasses Concretas de VeículoFactory: Subclasses que implementam o método de fábrica para criar tipos específicos de veículos.
